@@ -1,0 +1,71 @@
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>OPERA RPG: A Primeira Viagem</title>
+	<meta name="description" content="A Primeira Viagem: uma aventura-solo utilizando o sistema OPERA RPG. Interprte um agente secreto disfarçado de faxineiro, em uma missão de recuperação de item. ISBN: 978-65-00-38701-8. Palavras-chave: aventuras interativas, aventura-solo, ficha de personagem, imersão, opera rpg, rpg, simulação de realidades."/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Amatic+SC">
+	<link rel = "stylesheet" href = "css/style.css">
+	<script src = "js/main.js"></script>
+	<script src="js/sweetalert_min.js"></script>
+
+	<!-- Função para Redenderizar Ficha em Camada superior-->
+	<script type="text/javascript">
+		function toggleFAB()
+		{
+			var modal=document.getElementById('janelaModal');
+			var modalImg=document.getElementById("imgModal");
+			var captionTexto=document.getElementById("txtImg");
+			var btFechar=document.getElementsByClassName("fechar")[0];
+
+			//Trecho que carrega a imgaem da ficha de personagem e título (HMTL)
+			modal.style.display="block";
+			modalImg.src="img/ficha_Lixeiro.svg";
+			modalImg.alt="Ficha do Agente 'Lixeiro'";
+			captionTexto.innerHTML="Ficha do <a href='img/ficha_Lixeiro.png' class='classe1' target='blank'>Agente 'Lixeiro' para o OPERA RPG</a>";
+
+			btFechar.onclick=function()
+			{
+				modal.style.display="none";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id = "cabecalho">
+	<center><img src = "img/cabecalho__Primeira_Viagem.gif"></center>
+	</div>
+	<div id = "content">
+	<h2>Bem vindo a esta aventura-solo, no sistema OPERA RPG</h2>
+	<h3>Você jogará com o personagem descrito na ficha abaixo, e o mestre-de-jogo será o livro, na forma de texto.</h3>
+    <h3>Em um jogo de interpretação com o mestre-de-jogo presente, ele geralmente não dá dicas sobre quais opções um personagem pode seguir, o mestre-de-jogo apenas vai contando a história e cabe ao jogador imaginar a situação, calcular as opções e falar a sua decisão ao mestre-de-jogo.</h3>
+    <h3>Adaptando essa conversa para a escrita, enquanto a história foi escrita, foram previstas algumas alternativas que um jogador imaginaria e você pode escolher qual caminho seguir escolhendo o texto a ser lido.</h3>
+    <h3>Você está disfarçado e irá começar uma missão.</h3>
+	<center><input type="button" id = "button0" class="button button0" data-destination="dia_1" name="choices" value="Comece a aventura!"></center>
+	<center><input type="button" id = "button1" class="button button1" data-destination="" name="choices" value="Quer conhecer o OPERA RPG?"></center>
+	<center><input type="button" id = "button2" class="button button2" data-destination="instrucoes" name="choices" value="Quer saber como jogar?"></center>
+	<center><input type="button" id = "button3" class="button button3" data-destination="creditos" name="choices" value="Créditos"></center>
+	</div>
+	<div class="fab">
+		<button class="main" onclick="toggleFAB();">
+		</button>
+	</div>
+	<div id="janelaModal" class="modalVisual">
+		<span class="fechar"}>X</span>
+		<img class="modalConteudo" id="imgModal">
+		<div id="txtImg"></div>
+	</div>
+	<center>
+	<div>
+	  <button onclick="document.getElementById('player').play()">Play</button>
+	  <button onclick="document.getElementById('player').pause()">Pause</button>
+	  <button onclick="document.getElementById('player').volume+=0.1">Aumentar volume</button>
+	  <button onclick="document.getElementById('player').volume-=0.1">Diminuir volume</button>
+	</div>
+	<!-- Trecho para carregar a música-->
+	<audio id="player" autoplay="autoplay" loop="loop">
+	  <source src="music/Trecho_Espionage__Fox_amp_Mew.mp3" type="audio/mp3" />
+	  seu navegador não suporta HTML5
+	</audio>
+	</center>
+</body> 
+</html>

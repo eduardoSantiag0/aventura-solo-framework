@@ -1,0 +1,83 @@
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>OPERA RPG: Templo da Harmonia</title>
+	<meta name="description" content="Templo da Harmonia: Uma Aventura-Solo para o OPERA RPG. Interprete o personagem Toriel, habitante do mundo de fantasia medieval da Distéria, numa aventura onde ele irá se aventurar no Templo dos Elementos. Palavras-chave: aventuras interativas, aventura-solo, ficha de personagem, imersão, opera rpg, rpg, simulação de realidades."/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oranienbaum|Almendra+SC|Bungee+Spice|MedievalSharp">
+	<link rel = "stylesheet" href = "css/style.css">
+	<script src="js/main.js"></script>
+	<script src="js/sweetalert2_min.js"></script>
+	<script type="text/javascript">
+		function toggleFAB()
+		{
+			var modal=document.getElementById('janelaModal');
+			var modalImg=document.getElementById("imgModal");
+			var captionTexto=document.getElementById("txtImg");
+			var btFechar=document.getElementsByClassName("fechar")[0];
+
+			modal.style.display="block";
+			modalImg.src="img/ficha_Toriel.webp";
+			modalImg.alt="Ficha de Tomás Oliveira";
+			captionTexto.innerHTML="Ficha do <a href='img/ficha_Toriel.webp' class='classe1' target='blank'>Toriel de Acorde para o OPERA RPG</a>";
+
+			btFechar.onclick=function()
+			{
+				modal.style.display="none";
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div id = "cabecalho">
+	<center><img src = "img/cabecalho_templo.gif"></center>
+	</div>
+	<div id="content">
+		<h2>O TEMPLO DA HARMONIA</h2>
+		<h1>Bem vindo a esta aventura-solo,<br><b>no sistema OPERA RPG</b></h1>
+		<h3>Você jogará com Toriel, habitante do mundo de Distéria. Ele está descrito na ficha abaixo, e o mestre-de-jogo será o navegador, na forma de texto.</h3><h3>Em um jogo de representação com o mestre-de-jogo presente, ele geralmente não dá dicas sobre quais opções um personagem pode seguir e vai contando a história. Cabe ao jogador imaginar a situação, calcular as opções e falar a sua decisão ao mestre-de-jogo.</h3><h3>Adaptando essa conversa para a escrita, enquanto essa história foi elaborada, foram previstas algumas alternativas que um jogador imaginaria e você pode escolher qual caminho que Toriel seguirá escolhendo o texto a ser lido.</h3><h3>Começe sua jornada pela Distéria!</h3>
+		<center><input type="button" id="button0" class="button button0" data-destination="dia_1" name="choices" value="Comece a jornada!"></center>
+		<center><input type="button" id="button1" class="button button1" data-destination="" name="choices" value="Quer conhecer o OPERA RPG?"></center>
+		<center><input type="button" id="button2" class="button button2" data-destination="instrucoes" name="choices" value="Quer saber como jogar?"></center>
+		<center><input type="button" id="button3" class="button button3" data-destination="creditos" name="choices" value="Créditos"></center>
+	</div>
+
+	<center>
+	<div>
+	  <button onclick="document.getElementById('player').play()">Play</button>
+	  <button onclick="document.getElementById('player').pause()">Pause</button>
+	  <button onclick="document.getElementById('player').volume+=0.1">Aumentar volume</button>
+	  <button onclick="document.getElementById('player').volume-=0.1">Diminuir volume</button>
+	</div>
+	<audio id="player" autoplay="autoplay" loop="loop">
+	  <source src="music/trilha_templo.mp3" type="audio/mp3" />
+	  seu navegador não suporta HTML5
+	</audio>
+	</center>
+
+	<div class="fab">
+		<button class="main" onclick="toggleFAB();">
+		</button>
+	</div>
+	<div id="janelaModal" class="modalVisual">
+		<span class="fechar">X</span>
+		<img class="modalConteudo" id="imgModal">
+		<div id="txtImg"></div>
+	</div>
+
+	<center><div id="combate1" class="arena">
+		<h1>Golem de Fogo x Toriel</h1>
+		<div id="combateBox1" class="combateBox"><p id="chatStatus1"></p></div>
+		<input type="button" id="rolar1" class="button button4" value="Iniciar" onClick="luta(1);">
+        </div><center>
+
+	<center><div id="combate2" class="arena">
+		<h1>Golem de Ossos x Toriel</h1>
+		<div id="combateBox2" class="combateBox"><p id="chatStatus2"></p></div>
+		<input type="button" id="rolar2" class="button button4" value="Iniciar" onClick="luta(2);">
+        </div><center>
+
+        <script src="js/cm.js"></script>
+
+</body> 
+</html>
