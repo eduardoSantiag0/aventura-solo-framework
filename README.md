@@ -2,7 +2,7 @@
 ## 🎲 **Variáveis Globais:**
 - 🔮 ``story``: Armazena os dados da história.
 - 🧪 ``instrucoes`` e ``creditos``: Variáveis de controle para funcionalidades específicas.
-- 💾 **Variáveis customizáveis:** É possível criar variáveis para para guardar escolhas ou itens do jogador.  
+- 💾 **Variáveis customizáveis:** É possível criar variáveis para guardar escolhas ou itens do jogador.  
 
 ## 🗿 **Funções Principais:**
 - 🫵 ``getStory()`` Define as cenas e escolhas da narrativa, com toda a estrutura da história.
@@ -16,7 +16,7 @@
 - 🏷️ ``title``: Título da cena.
 - 🖼️ ``image``: Caminho para a imagem associada.
 - ✍️ ``story``: Texto da cena.
-- 🎮 ``choices``: As escolhos/opções que aparecem na tema. Cada escolha tem:
+- 🎮 ``choices``: As escolhas/opções que aparecem no tema. Cada escolha tem:
     - 🪧 ``choice``: Texto do botão.
     - 🧵 ``destination``: Nome da próxima cena.
 
